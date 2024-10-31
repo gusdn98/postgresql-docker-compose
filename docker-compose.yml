@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    ports:
+      - "${PG_PORT}:5432"
+    command: -c config_file=/etc/postgresql.conf
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASS}
+      POSTGRES_DB: dev
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+      - ${POSTGRESQL_CONFIG}/postgresql.conf:/etc/postgresql.conf
+      - ${POSTGRESQL_CONFIG}/pg_hba.conf:/etc/pg_hba.conf
+      
+volumes:
+  postgresql_data:
+
