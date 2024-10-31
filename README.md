@@ -9,4 +9,4 @@ PORT, USER, PASS, change
 
 `docker exec -it postgresql bash`
 
-`psql -U USER -d dev`
+`psql -U <username> -d <dbname>`
