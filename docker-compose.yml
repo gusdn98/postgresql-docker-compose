@@ -10,7 +10,7 @@ services:
     environment:
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASS}
-      POSTGRES_DB: dev
+      POSTGRES_DB: ${PG_DB}
     volumes:
       - postgresql_data:/var/lib/postgresql/data
       - ${POSTGRESQL_CONFIG}/postgresql.conf:/etc/postgresql.conf
